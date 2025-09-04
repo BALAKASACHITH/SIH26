@@ -1,10 +1,109 @@
-html,body,#root{
+html, body, #root {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: red;
 }
-.App{
+
+.App {
     height: 100%;
-    background-color: yellow;
+    display: flex;
+}
+
+.HomePage {
+    height: 100%;
+    width: 100%;
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    z-index: 1; /* ensure it's behind overlay */
+}
+
+.overlay {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+}
+.Hometop{
+    background-color: white;
+    height: 10%;
+    width: 100%;
+    border-bottom: 4px solid purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.htLeft{
+    height: 100%;
+    width: 20%;
+    background-image: url("./assets/logo.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.htRight{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.htrHome,.htrAbout{
+    height: 50%;
+    width: 100px;
+    color: purple;
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.htrHome:hover,.htrAbout:hover,.htrsResearcher:hover,.htrsAdmin:hover{
+    color: #006666 ;
+}
+.htrSelect{
+    height: 50%;
+    width: 170px;
+    color: purple;
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+}
+.Homebot {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.Homebot h1 {
+    z-index: 3;
+    color: purple;
+    animation: aniForHome 1000ms linear forwards; /* 5s duration, linear, keeps final state */
+}
+
+@keyframes aniForHome {
+    from{
+        font-size: 80px;
+    }to{
+        font-size: 100px;
+    }
 }
