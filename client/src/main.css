@@ -87,14 +87,15 @@ html, body, #root {
     cursor: pointer;
 }
 .Homebot {
-    flex: 1;
+    height: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.Homebot h1 {
+.Home{
     z-index: 3;
     color: purple;
     animation: aniForHome 1000ms linear forwards; /* 5s duration, linear, keeps final state */
@@ -102,8 +103,85 @@ html, body, #root {
 
 @keyframes aniForHome {
     from{
-        font-size: 80px;
+        font-size: 40px;
     }to{
-        font-size: 100px;
+        font-size: 50px;
     }
+}
+
+.About {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.About h1 {
+    font-size: 70px;
+    font-weight: bold;
+    color: #6a0dad; /* rich purple */
+    margin-bottom: 20px;
+}
+
+.About p {
+    font-size:40px;
+    line-height: 1.6;
+    font-weight: bolder;
+    max-width: 800px;
+    color:  #006666; /* dark gray for readability */
+}
+
+.Researcher{
+    min-height: 100%;
+    min-width: 100%;
+    background-image: url("./assets/researcherbg.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+.rBox{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 500px;
+    width: 600px;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+}
+.rbTop{
+    height: 10%;
+    width: 100%;
+    color: purple;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-bottom: 2px solid purple;
+}
+.rbBot{
+    height: 90%;
+    width: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.login_registerInput{
+    color: purple;
+}
+.Admin{
+    min-height: 100%;
+    min-width: 100%;
+    background-color: blue;
 }
