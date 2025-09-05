@@ -11,9 +11,10 @@ const Researcher = () => {
     }
     return (
         <div className='Researcher'>
-            <div className="rBox" onClick={swap}>
+            <div className="rBox">
                 <div className="rbTop">{login?"Login":"Register"}</div>
                 <div className="rbBot">
+                    <a href="#" onClick={swap} >{login?"New Here ? Click To Register":"Existing User ? Click To Login"}</a>
                     <Input cn="login_registerInput" value={email} setValue={setEmail} placeholder='Enter UserName (EmailId)' />
                     <Input cn="login_registerInput" type='password' value={password} setValue={setPassword} placeholder='Enter Password'/>
                     <Button cn="login_registerButton" text={login?"Login":"Register"} />

@@ -149,39 +149,89 @@ html, body, #root {
     left: 50%;
     transform: translate(-50%,-50%);
     height: 500px;
-    width: 600px;
+    width: 400px;
     border-radius: 20px;
     background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
+    box-shadow: 0 0 5px purple;
+    animation: rbBotani 0.5s ease-in-out forwards;
 }
 .rbTop{
     height: 10%;
     width: 100%;
-    color: purple;
+    background-color: rgb(192, 113, 192);
+    color: white;
     font-weight: bolder;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    border-bottom: 2px solid purple;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 .rbBot{
+    position: inherit;
     height: 90%;
     width: 100%;
-    background-color: aqua;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
+@keyframes rbBotani {
+    from{
+        height: 400px;
+        width: 300px;
+    }to{
+        height: 500px;
+        width: 400px;
+    }
+}
+.rbBot a{
+    color: rgb(192, 113, 192);
+    position: absolute;
+    top: 300px;
+    left: 25px;
+}
 .login_registerInput{
-    color: purple;
+    height: 40px;
+    width: 85%;
+    font-size: 20px;
+    color: rgb(192, 113, 192);
+    border: 2px solid rgb(192, 113, 192);
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+}
+
+.login_registerInput::placeholder {
+    color: rgb(192, 113, 192);
+    opacity: 1;
+}
+
+.login_registerInput:focus::placeholder {
+    color:indigo;
+    opacity: 1;
+}
+.login_registerInput:focus{
+    border: 2px solid indigo;
+    color: indigo;
+}
+.login_registerButton{
+    height: 40px;
+    width: 90%;
+    font-size: 20px;
+    color: white;
+    border: none;
+    background-color: rgb(192, 113, 192);
 }
 .Admin{
     min-height: 100%;
     min-width: 100%;
-    background-color: blue;
+    background-image: url("./assets/admin.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
