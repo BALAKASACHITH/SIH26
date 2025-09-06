@@ -3,7 +3,9 @@ import Input from '../../FormElements/Input';
 import Button from '../../FormElements/Button';
 import Message from '../../FormElements/Message';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const Researcher = () => {
+    const navigate=useNavigate();
     const [login, setLogin] = useState(true);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -23,6 +25,13 @@ const Researcher = () => {
             const data = response.data;
             console.log("Response object:", data);
             setMessage(data.message);
+            const namePart = email.split("@")[0];
+            const userObj = {
+                email: email,
+                name: namePart,
+            };
+            localStorage.setItem("user", JSON.stringify(userObj));
+            navigate("/Researcher_DashBoard");
             setGood(true);
             setVisible(true);
         } catch (error) {
