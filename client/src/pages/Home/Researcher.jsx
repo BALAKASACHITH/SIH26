@@ -23,17 +23,23 @@ const Researcher = () => {
                 password,
             });
             const data = response.data;
-            console.log("Response object:", data);
-            setMessage(data.message);
-            const namePart = email.split("@")[0];
-            const userObj = {
-                email: email,
-                name: namePart,
-            };
-            localStorage.setItem("user", JSON.stringify(userObj));
-            navigate("/Researcher_DashBoard");
-            setGood(true);
-            setVisible(true);
+            if (data.success) {
+                setMessage(data.message);
+                setGood(true);
+                setVisible(true);
+                const namePart = email.split("@")[0];
+                const userObj = {
+                    email,
+                    name: namePart,
+                    password,
+                };
+                localStorage.setItem("user", JSON.stringify(userObj));
+                navigate("/Researcher_DashBoard");
+            } else {
+                setMessage(data.message || "Something went wrong");
+                setGood(false);
+                setVisible(true);
+            }
         } catch (error) {
             console.error("Error:", error.response ? error.response.data : error.message);
             setMessage(error.response?.data?.message || "Something went wrong");

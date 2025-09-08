@@ -8,6 +8,7 @@ html, body, #root {
 .App {
     height: 100%;
     display: flex;
+    overflow-y: hidden;
 }
 
 .HomePage {
@@ -230,6 +231,7 @@ html, body, #root {
     background-color: rgb(192, 113, 192);
 }
 .Admin{
+    position: relative;
     min-height: 100%;
     min-width: 100%;
     background-image: url("./assets/admin.png");
@@ -256,7 +258,6 @@ html, body, #root {
 .messageBox.good {
     background-color: green;
 }
-
 .messageBox.bad {
     background-color: red;
 }
@@ -269,6 +270,11 @@ html, body, #root {
     cursor: pointer;
 }
 .MessageResearch{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.MessageAdmin{
     position: absolute;
     top: 5px;
     right: 10px;
@@ -349,59 +355,66 @@ html, body, #root {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    padding-top: 20px;
     overflow-y: auto;
 }
 .communityPostCard {
     width: 95%;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin: 10px 0;
-    padding: 8px 12px;
-    background-color: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    background-color: rgb(251, 246, 251);
+    margin: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    min-height: 40px; /* Minimum height */
+    align-items: flex-start;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 200px;
+    box-sizing: border-box; /* ensure padding counts in size */
+    box-shadow: 0 0 10px purple;
 }
 
 .cpTop {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 6px;
+    height: 60px;
+    width: 100%;
+    padding-left: 10px;
+    gap: 15px;
+    border-bottom: 2px solid purple;
+    border-top-left-radius: 20px;
+    box-sizing: border-box;
 }
 
 .cpAvatar {
-    width: 22px;
-    height: 22px;
+    text-align: center;
     border-radius: 50%;
-    background-color: #007bff;
-    color: #fff;
-    font-weight: bold;
-    font-size: 12px;
+    background-color: white;
+    border: 2px solid #006666;
+    color: black;
+    height: 30px;
+    width: 30px;
+    font-size: 25px;
+    font-weight: bolder;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.cpName {
-    font-size: 14px;
-    font-weight: 500;
-    color: blue;
+.cpName{
+    color: black;
+    font-size: 20px;
 }
-
 .cpBot {
-    font-size: 14px;
-    color: #444;
-    line-height: 1.4;
-    word-wrap: break-word;  /* Prevent long words breaking layout */
-    white-space: pre-wrap;  /* Preserve line breaks & wrap text */
+    padding: 10px;
+    font-size: 20px;
+    width: 100%;
+    height: 140px;
+    box-sizing: border-box;
 }
 
 .Yours{
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
 }
 .MessageYours{
@@ -411,6 +424,7 @@ html, body, #root {
     transform: translateX(-50%);
 }
 .yTop{
+    margin-top: 20px;
     height: 10%;
     width: 100%;
     display: flex;
@@ -443,7 +457,7 @@ html, body, #root {
     cursor: pointer;
 }
 .yBot{
-    height: 90%;
+    flex: 1;
     width: 100%;
     margin-top: 10px;
     display: flex;
@@ -469,25 +483,233 @@ html, body, #root {
     width: 82%;
     background-color: white;
     box-shadow: 0 0 10px grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
 }
-.deleteBtn{
+.postCardButtons{
+    box-sizing: border-box;
+    margin-bottom: 5px;
     height: 50px;
     width: 10%;
-    background-color: rgb(237, 32, 32);
-    outline: none;
-    border: 2px solid red;
+    background-color: green;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
-    color: white;
+}
+.pcbDelete{
+    border: 1px solid transparent;
+    height: 50px;
+    width: 50%;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: red;
+    background-color: white;
+    cursor: pointer;
+}
+.pcbEdit{
+    border: 1px solid transparent;
+    height: 50px;
+    width: 50%;
+    outline: none;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: green;
     cursor: pointer;
 }
 .Research{
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.researchTop{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+.researchBot{
+    height: 90%;
+    width: 100%;
+}
+.fileInputContainer {
+    background-color: rgb(186, 98, 186);
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    width: 80%;
+    height: 50%;
+    font-size: large;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.Analyze{
+    width: 10%;
+    height: 85%;
+    cursor: pointer;
+    color: white;
+    border: 0 solid transparent;
+    font-size: 20px;
+    background-color: rgb(87, 189, 87);
+    border-radius: 10px;
+}
+.fileName {
+    margin-left: 15px;
+    font-size: 14px;
+    color: #fff;
 }
 .Profile{
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    /* background-color: green; */
+    box-sizing: border-box;
+    padding: 20px;
+}
+.userLogout{
+    height: 40px;
+    width: 100px;
+    background-color: red;
+    border: 0px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: larger;
+}
+
+.profilePersonal {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.profileHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f0f0f0;
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+.profileHeader h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.arrowIcon {
+    font-size: 18px;
+    color: purple;
+    transition: transform 0.3s ease;
+}
+
+.profileDetails {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 16px;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    background: #fafafa;
+}
+
+.profileDetails.open {
+    max-height: 200px; /* enough for details */
+    padding: 12px 16px;
+}
+
+.profileDetails p {
+    margin: 6px 0;
+    font-size: 16px;
+    color: #333;
+}
+.Admin_DashBoard{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+.AdminTop{
+    background-color: white;
+    height: 10%;
+    width: 100%;
+    border-bottom: 4px solid purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.atLeft{
+    height: 100%;
+    width: 20%;
+    background-image: url("./assets/logo.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.atRight{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.atRight h1{
+    position: absolute;
+    color: darkblue;
+    left:300px;
+}
+.AdminBot{
+    height: 90%;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+.metricCard {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.metricCard h2 {
+    color: purple;
+}
+
+.metricCard img {
+    height: 90%;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 }

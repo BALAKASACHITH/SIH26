@@ -29,14 +29,27 @@ const Community = () => {
                                 <div className="cpAvatar">{firstChar}</div>
                                 <div className="cpName">{name} say's</div>
                             </div>
-                            <div className="cpBot">
+                            <div
+                                className="cpBot"
+                            >
                                 {post.description}
                             </div>
                         </div>
                     );
                 })
             ) : (
-                <h1>No community posts yet!</h1>
+                <h1
+                    style={{
+                        color: "purple",
+                        fontSize: "20px",
+                        fontWeight: "500",
+                        marginTop: "20px",
+                        textAlign: "center",
+                        fontFamily: "Arial, sans-serif",
+                    }}
+                >
+                    NO POSTS YET !!
+                </h1>
             )}
         </div>
     );

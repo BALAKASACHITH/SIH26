@@ -40,6 +40,23 @@ const Yours = () => {
             setVisible(true);
         }
     };
+    const handleEdit= async (_id,descr)=>{
+        try {
+            await axios.delete("http://localhost:2000/post/delete", {
+                data: { _id }
+            });
+            setMessage("You Can Edit Now");
+            setDescr(descr);
+            setGood(true);
+            setVisible(true);
+            fetchPosts(); // refresh after delete
+        } catch (error) {
+            console.error("Error deleting post:", error.response ? error.response.data : error.message);
+            setMessage(error.response?.data?.message || "Something went wrong");
+            setGood(false);
+            setVisible(true);
+        }
+    };
     const handleAdd = async () => {
         try {
             const user = JSON.parse(localStorage.getItem("user"));
@@ -93,18 +110,40 @@ const Yours = () => {
                 />
             </div>
             <div className="yBot">
-                {posts.length!=0?(posts.map(post => (
+                {posts.length !== 0 ? (
+                    posts.map(post => (
                     <div key={post._id} className='YoursPost'>
                         <div className="postCard">
                             {post.description}
                         </div>
-                        <Button
-                            cn="deleteBtn"
-                            text="Delete"
-                            onClick={() => handleDelete(post._id)}
-                        />
+                        <div className="postCardButtons">
+                            <Button
+                                cn="pcbEdit"
+                                text={<i className="fa-solid fa-pencil"></i>}
+                                onClick={() => handleEdit(post._id, post.description)}
+                            />
+                            <Button
+                                cn="pcbDelete"
+                                text={<i className="fa-solid fa-trash-can"></i>}
+                                onClick={() => handleDelete(post._id)}
+                            />
+                        </div>
                     </div>
-                ))):<h1>NO POSTS YET !!</h1>}
+                    ))
+                ) : (
+                    <h1
+                        style={{
+                            color: "purple",
+                            fontSize: "20px",
+                            fontWeight: "500",
+                            marginTop: "20px",
+                            textAlign: "center",
+                            fontFamily: "Arial, sans-serif",
+                        }}
+                    >
+                    NO POSTS YET !!
+                    </h1>
+                )}
             </div>
         </div>
     );
