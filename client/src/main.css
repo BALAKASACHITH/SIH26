@@ -49,7 +49,7 @@ html, body, #root {
 .htLeft{
     height: 100%;
     width: 20%;
-    background-image: url("./assets/logo.jpeg");
+    background-image: url("./assets/logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -298,7 +298,7 @@ html, body, #root {
 .rdtLeft{
     height: 100%;
     width: 20%;
-    background-image: url("./assets/logo.jpeg");
+    background-image: url("./assets/logo.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -538,7 +538,7 @@ html, body, #root {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .researchBot{
     height: 90%;
@@ -547,9 +547,9 @@ html, body, #root {
 .fileInputContainer {
     background-color: rgb(186, 98, 186);
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius: 20px;
     color: white;
-    width: 80%;
+    width: 60%;
     height: 50%;
     font-size: large;
     font-size: 25px;
@@ -557,6 +557,53 @@ html, body, #root {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+.Theory {
+    width: 98%;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #f3e8ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: "Arial", sans-serif;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.Theory h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #5a189a;
+    text-align: center;
+}
+
+.Theory h3 {
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #7b2cbf;
+}
+
+.Theory p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+.location{
+    height: 75%;
+    width: 15%;
+    border: 2px solid rgb(186, 98, 186);
+    color: white;
+    font-size: 15px;
+    padding-left: 5px;
+    outline: none;
+    border-radius: 20px;
+    text-align: center;
+}
+.location::placeholder{
+    color: purple;
 }
 .Analyze{
     width: 10%;
@@ -566,7 +613,7 @@ html, body, #root {
     border: 0 solid transparent;
     font-size: 20px;
     background-color: rgb(87, 189, 87);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .fileName {
     margin-left: 15px;
@@ -664,7 +711,7 @@ html, body, #root {
 .atLeft{
     height: 100%;
     width: 20%;
-    background-image: url("./assets/logo.jpeg");
+    background-image: url("./assets/logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

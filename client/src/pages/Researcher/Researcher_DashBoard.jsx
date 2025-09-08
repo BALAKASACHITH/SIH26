@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState,useEffect,useLocation} from "react";
 import { useNavigate,Routes,Route} from "react-router-dom";
 import Community from './Community';
 import Yours from './Yours';
@@ -6,7 +6,12 @@ import Profile from './Profile';
 import Research from './Research';
 const Researcher_DashBoard = () => {
     const navigate = useNavigate();
+    const location=useLocation();
     const [user,setUser]=useState(null);
+    const giveColor=(path)=>{
+        if(location.pathname===path) return {color:"#006666"};
+        return {};
+    }
     useEffect(() => {
         const user = localStorage.getItem("user");
         if (!user) {
@@ -32,9 +37,11 @@ const Researcher_DashBoard = () => {
             <div className="rdTop">
                 <div className="rdtLeft"></div>
                 <div className="rdtRight">
-                    <div className="rdtrCommunity" onClick={handleCom} >Community</div>
-                    <div className="rdtrYours" onClick={handleYours} >Yours</div>
-                    <div className="rdtrResearch" onClick={handleRe} >Research</div>
+                    <div className="rdtrCommunity" style={giveColor("/Researcher_DashBoard")} onClick={handleCom} >Community</div>
+                    <div className="rdtrYours" onClick={handleYours} style={giveColor("/Researcher_DashBoard/Yours")} >Yours</div>
+                    <div className="rdtrResearch" onClick={handleRe} style={giveColor("/Researcher_DashBoard/Research")} >Research</div>
+                    <div className="rdtrResearch" >About</div>
+                    <div className="rdtrResearch" >Download</div>
                     <div className="rdtrProfile" onClick={handlePro} >{(user.name[0]).toUpperCase()}</div>
                 </div>
             </div>
