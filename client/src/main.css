@@ -75,7 +75,7 @@ html, body, #root {
     cursor: pointer;
 }
 .htrHome:hover,.htrAbout:hover,.htrsResearcher:hover,.htrsAdmin:hover{
-    color: #006666 ;
+    color: darkblue ;
 }
 .htrSelect{
     height: 50%;
@@ -302,6 +302,7 @@ html, body, #root {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 .rdtRight{
     height: 100%;
@@ -321,14 +322,14 @@ html, body, #root {
     color: purple;
 }
 .rdtrCommunity:hover,.rdtrYours:hover,.rdtrResearch:hover{
-    color:#006666;
+    color:darkblue;
 }
 .rdtrProfile{
     text-align: center;
     box-sizing: border-box;
     border-radius: 50%;
-    background-color: rgb(135, 234, 243);
-    border: 2px solid #006666;
+    background-color: white;
+    border: 2px solid purple;
     color: purple;
     height: 40px;
     width: 40px;

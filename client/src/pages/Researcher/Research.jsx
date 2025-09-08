@@ -42,20 +42,9 @@ const Research = () => {
     const toggleAccordion = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
-
     return (
         <div className="Research">
             <div className="researchBot">
-                <div className="TheoryIntro">
-                    <h1>Our Platform</h1>
-                    <p>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our platform is designed to redefine how researchers explore, analyze, and
-                        understand marine biodiversity. By combining the strengths of cutting-edge
-                        AI with an accessible and user-friendly interface, it provides scientists
-                        with powerful tools to unlock insights from environmental DNA (eDNA)
-                        collected in some of the most remote and fragile ecosystems on Earth.
-                    </p>
-                </div>
                 {analysisStarted ? (
                     <>
                         <h1 className="analysisTitle">
@@ -71,6 +60,16 @@ const Research = () => {
                     </>
                 ) : (
                     <div className="Theory">
+                        <div className="TheoryIntro">
+                            <h1>Our Platform</h1>
+                            <p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our platform is designed to redefine how researchers explore, analyze, and
+                                understand marine biodiversity. By combining the strengths of cutting-edge
+                                AI with an accessible and user-friendly interface, it provides scientists
+                                with powerful tools to unlock insights from environmental DNA (eDNA)
+                                collected in some of the most remote and fragile ecosystems on Earth.
+                            </p>
+                        </div>
                         {[
                             {
                                 title: "Analyze Smarter",
@@ -127,25 +126,30 @@ const Research = () => {
                         style={{ display: "none" }}
                     />
                 </label>
-                <Input cn="location" placeholder="Enter Location" />
+                <Input cn="location" placeholder="Enter Location (Optional)" />
                 <Button cn="Analyze" text="Analyze" onClick={handleAnalyze} />
             </div>
             <style>{`
                 .TheoryIntro {
-                    width: 90%;
-                    margin-top: 2px;
+                    width: 100%;
+                    text-align: justify;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
                     text-align: justify;
                 }
                 .TheoryIntro h1 {
                     color: darkslateblue;
-                    font-size: 40x;
+                    background-color: transparent;
+                    font-size: 24px;
                     text-align: center;
                 }
                 .TheoryIntro p {
-                    font-size: 28px;
+                    font-size: 25px;
+                    background-color: transparent;
                     line-height: 1.2;
+                    text-align: center;
                     color: #4b0082;
-                    background-color: #f9f5fc;
                 }
                 .researchBot {
                     height: 90%;
@@ -191,11 +195,11 @@ const Research = () => {
                     100% { transform: rotate(360deg);}
                 }
                 .Theory {
+                    background-color: transparent;
                     width: 90%;
-                    background: #f3e8ff;
+                    background: transperant;
                     padding: 20px;
                     border-radius: 20px;
-                    box-shadow: 0 0 10px rgba(128,0,128,0.3);
                 }
                 .accordionItem {
                     border-bottom: 1px solid #d1b3ff;

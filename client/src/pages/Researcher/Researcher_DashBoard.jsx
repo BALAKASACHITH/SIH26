@@ -1,5 +1,5 @@
-import React, { useState,useEffect,useLocation} from "react";
-import { useNavigate,Routes,Route} from "react-router-dom";
+import React, { useState,useEffect} from "react";
+import { useLocation, useNavigate,Routes,Route} from "react-router-dom";
 import Community from './Community';
 import Yours from './Yours';
 import Profile from './Profile';
@@ -10,6 +10,10 @@ const Researcher_DashBoard = () => {
     const [user,setUser]=useState(null);
     const giveColor=(path)=>{
         if(location.pathname===path) return {color:"#006666"};
+        return {};
+    }
+    const giveBor=(path)=>{
+        if(location.pathname===path) return {color:"#006666",borderColor:"#006666"};
         return {};
     }
     useEffect(() => {
@@ -35,14 +39,14 @@ const Researcher_DashBoard = () => {
     return (
         <div className="Researcher_DashBoard">
             <div className="rdTop">
-                <div className="rdtLeft"></div>
+                <div className="rdtLeft" onClick={handleCom} ></div>
                 <div className="rdtRight">
                     <div className="rdtrCommunity" style={giveColor("/Researcher_DashBoard")} onClick={handleCom} >Community</div>
-                    <div className="rdtrYours" onClick={handleYours} style={giveColor("/Researcher_DashBoard/Yours")} >Yours</div>
+                    <div className="rdtrYours" onClick={handleYours} style={giveColor("/Researcher_DashBoard/Yours")} >Your Posts</div>
                     <div className="rdtrResearch" onClick={handleRe} style={giveColor("/Researcher_DashBoard/Research")} >Research</div>
                     <div className="rdtrResearch" >About</div>
                     <div className="rdtrResearch" >Download</div>
-                    <div className="rdtrProfile" onClick={handlePro} >{(user.name[0]).toUpperCase()}</div>
+                    <div className="rdtrProfile" onClick={handlePro} style={giveBor("/Researcher_DashBoard/Profile")} >{(user.name[0]).toUpperCase()}</div>
                 </div>
             </div>
             <div className="rdBot">

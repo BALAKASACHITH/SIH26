@@ -3,10 +3,10 @@ import React from 'react'
 const About = () => {
     return (
         <div className='About'>
-            <h1>About Hello DNA</h1>
+            <h1>About Anveshan</h1>
             <p>
-                Hello DNA is a collaborative platform for researchers to explore 
-                and analyze environmental DNA datasets, enabling discoveries in 
+                Anveshan is a collaborative platform for researchers to explore
+                and analyze environmental DNA datasets, enabling discoveries in
                 deep sea biodiversity.
             </p>
         </div>

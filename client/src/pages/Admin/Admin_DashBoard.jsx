@@ -1,9 +1,12 @@
 import React from 'react'
-import one from './one.jpeg'
-import two from './two.jpeg'
-import three from './three.jpeg'
-import four from './four.jpeg'
-import five from './five.jpeg'
+import nth from './nth.png'
+import nf from './nf.png'
+import no from './no.png';
+import nt from './nt.png';
+import two from './two.jpg'
+import three from './three.jpg'
+import four from './four.jpg'
+import five from './five.jpg'
 const Admin_DashBoard = () => {
     return (
         <div className='Admin_DashBoard'>
@@ -15,7 +18,16 @@ const Admin_DashBoard = () => {
             </div>
             <div className="AdminBot">
                 <div className="metricCard">
-                    <img src={one} alt="Users"/>
+                    <img src={no} alt="Users"/>
+                </div>
+                <div className="metricCard">
+                    <img src={nt} alt="Users"/>
+                </div>
+                <div className="metricCard">
+                    <img src={nth} alt="Users"/>
+                </div>
+                <div className="metricCard">
+                    <img src={nf} alt="Users"/>
                 </div>
                 <div className="metricCard">
                     <img src={two} alt="Users"/>

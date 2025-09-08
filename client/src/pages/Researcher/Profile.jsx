@@ -24,8 +24,12 @@ const Profile = () => {
                 <div className={`profileDetails ${isOpen ? "open" : ""}`}>
                     {user ? (
                         <>
+                            <p><strong>UserName:</strong> {user.email.split("@")[0]}</p>
                             <p><strong>Email:</strong> {user.email}</p>
-                            <p><strong>Password:</strong> {user.password}</p>
+                            <p><strong>Research Papers Published:</strong> {user.papersPublished || 0}</p>
+                            <p><strong>Field of Study:</strong> {user.field || "NA"}</p>
+                            <p><strong>Institution:</strong> {user.institution || "NA"}</p>
+                            <p><strong>Current Position:</strong> {user.position || "NA"}</p>
                         </>
                     ) : (
                         <p>No user data found</p>

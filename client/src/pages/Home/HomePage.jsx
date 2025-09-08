@@ -3,9 +3,10 @@ import Home from './Home';
 import About from './About';
 import Researcher from './Researcher';
 import Admin from './Admin';
-import {Routes,Route,useNavigate} from 'react-router-dom'
+import {Routes,Route,useNavigate,useLocation} from 'react-router-dom'
 const HomePage = () => {
     const navigate=useNavigate();
+    const location=useLocation();
     const homeClick=()=>{
         navigate("/");
     }
@@ -18,6 +19,10 @@ const HomePage = () => {
     const adminClick=()=>{
         navigate("/Admin");
     }
+    const giveColor=(path)=>{
+        if(location.pathname===path) return{color:"#006666"};
+        return {};
+    }
     return (
         <div className="HomePage">
             <video autoPlay loop muted playsInline className="background-video">
@@ -26,14 +31,14 @@ const HomePage = () => {
             </video>
             <div className="overlay">
                 <div className="Hometop">
-                    <div className="htLeft"></div>
+                    <div className="htLeft" onClick={homeClick} ></div>
                     <div className="htRight">
-                        <div className="htrHome" onClick={homeClick} >Home</div>
-                        <div className="htrAbout" onClick={aboutClick} >About</div>
+                        <div className="htrHome" onClick={homeClick} style={giveColor("/")} >Home</div>
+                        <div className="htrAbout" onClick={aboutClick} style={giveColor("/About")} >About</div>
                         <div className="htrSelect">
-                            <div className="htrsResearcher" onClick={researcherClick} >Researcher</div>
+                            <div className="htrsResearcher" onClick={researcherClick} style={giveColor("/Researcher")} >Researcher</div>
                             <h3>/</h3>
-                            <div className="htrsAdmin" onClick={adminClick} >Admin</div>
+                            <div className="htrsAdmin" onClick={adminClick} style={giveColor("/Admin")} >Admin</div>
                         </div>
                     </div>
                 </div>
