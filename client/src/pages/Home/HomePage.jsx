@@ -35,6 +35,7 @@ const HomePage = () => {
                     <div className="htRight">
                         <div className="htrHome" onClick={homeClick} style={giveColor("/")} >Home</div>
                         <div className="htrAbout" onClick={aboutClick} style={giveColor("/About")} >About</div>
+                        <div className="htrAbout" onClick={researcherClick}>Download</div>
                         <div className="htrSelect">
                             <div className="htrsResearcher" onClick={researcherClick} style={giveColor("/Researcher")} >Researcher</div>
                             <h3>/</h3>
@@ -54,5 +55,4 @@ const HomePage = () => {
         </div>
     );
 }
-
 export default HomePage;

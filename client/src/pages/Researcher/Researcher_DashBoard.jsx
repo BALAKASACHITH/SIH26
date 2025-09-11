@@ -44,7 +44,7 @@ const Researcher_DashBoard = () => {
                     <div className="rdtrCommunity" style={giveColor("/Researcher_DashBoard")} onClick={handleCom} >Community</div>
                     <div className="rdtrYours" onClick={handleYours} style={giveColor("/Researcher_DashBoard/Yours")} >Your Posts</div>
                     <div className="rdtrResearch" onClick={handleRe} style={giveColor("/Researcher_DashBoard/Research")} >Research</div>
-                    <div className="rdtrResearch" >About</div>
+                    <div className="rdtrResearch">About</div>
                     <div className="rdtrResearch" >Download</div>
                     <div className="rdtrProfile" onClick={handlePro} style={giveBor("/Researcher_DashBoard/Profile")} >{(user.name[0]).toUpperCase()}</div>
                 </div>

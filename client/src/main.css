@@ -1,3 +1,4 @@
+
 html, body, #root {
     height: 100%;
     margin: 0;
@@ -593,18 +594,19 @@ html, body, #root {
 }
 
 .location{
-    height: 75%;
+    height: 50%;
     width: 15%;
-    border: 2px solid rgb(186, 98, 186);
+    border: 10px solid rgb(186, 98, 186);
     color: white;
     font-size: 15px;
     padding-left: 5px;
     outline: none;
-    border-radius: 20px;
+    border-radius: 50px;
     text-align: center;
+    box-shadow: 0 0 10px rgb(186, 98, 186);
 }
 .location::placeholder{
-    color: purple;
+    color: red;
 }
 .Analyze{
     width: 10%;
